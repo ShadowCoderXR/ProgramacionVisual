@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora de figuras</title>
+</head>
+<body>
+
+    <script src="functions.js"></script>
+
+    <script>
+        let opc = prompt("Seleccione la figura a calcular |c uadrado = 1 | Rectangulo = 2 | Triangulo = 3 |");
+        let n1 = prompt("ingrese la base");
+        let n2 = prompt("ingrese la altura");
+        let total = figuraCalcular(opc, n1, n2);
+
+        alert('El area de la figura es: ' + total);
+    </script>
+    
+</body>
+</html>

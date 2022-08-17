@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego POW</title>
+</head>
+<body style="background-image: url(Img/Fondo.png); background-size: cover; background-repeat: no-repeat;">
+    <!-- Btns DIV -->
+    <div style="text-align: center; margin-top: 50px;">
+        
+        <h1>JAKE EL PERRO</h1>    
+        <button class="btn-accion" id="btn-comer" style="width: 200px; height: 50px; font-size: 20px; background-color:red;" >Comer</button>
+        <button class="btn-accion" id="btn-dormir" style="width: 200px; height: 50px; font-size: 20px; background-color:blue;" >Dormir</button>
+        <button class="btn-accion" id="btn-baila" style="width: 200px; height: 50px; font-size: 20px; background-color: forestgreen;">Baila</button>
+        <button class="btn-accion" id="btn-pelea" style="width: 200px; height: 50px; font-size: 20px; background-color: darkcyan;">Pelea</button>
+    </div>
+    <!-- /btns-->
+    <!-- imagen circular -->
+    <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+        <img src="Img/P.gif" id="imagen" alt="jake" style="width: 400px; height: 400px; border-radius: 1110%;">
+    </div>
+    <!-- /imagen -->
+</body>
+<script>
+
+    let nComer = 0;
+    let nDormir = 0;
+    let nBaila = 0;
+    let nPelear = 0;
+        
+    btnComer = document.getElementById('btn-comer');
+    btnDormir = document.getElementById('btn-dormir');
+    btnBaila = document.getElementById('btn-baila');
+    btnPelea = document.getElementById('btn-pelea');
+    
+    btnComer.addEventListener('click', function(){
+        comer();                
+    });
+
+    btnDormir.addEventListener('click', function(){
+        dormir();        
+    });
+
+    btnBaila.addEventListener('click', function(){
+        baila();        
+    });
+
+    btnPelea.addEventListener('click', function(){
+        pelea();
+    });
+
+
+    
+    //Neutral
+
+    function neutral(){
+        document.getElementById('imagen').src = "Img/P.gif";
+    }
+
+    
+    //Comer
+     
+     function comer(){        
+        if(nComer < 2){
+            nComer++;            
+            document.getElementById('imagen').src = "Img/A.gif";                        
+            temporizador();
+        }else{            
+            document.getElementById('imagen').src = "Img/3s81.gif";
+            
+            alert("¡Jake engordo!")
+        }        
+    }
+    
+
+    
+    //dormir
+     
+    function dormir(){
+        if(nDormir < 2)
+        {
+            nDormir++;
+            document.getElementById('imagen').src = "Img/DOR.gif";
+            temporizador();
+        }else{
+            document.getElementById('imagen').src = "Img/MT.jpg";
+            
+            alert("¡Jake durmio de mas y murio :( !")
+            ocultarBotones();
+        }
+    }
+
+    
+    // Bailar
+     
+    function baila(){
+        document.getElementById('imagen').src = "Img/B.gif";
+        temporizador();
+        nComer--;
+    }
+
+
+    // Pelear
+
+    function pelea(){
+        document.getElementById('imagen').src = "Img/pelea.gif"
+        temporizador();
+    }
+
+    // Ocultar botones
+    function ocultarBotones(){
+        // Esconder boton
+        btnComer.style.display = "none";
+        btnDormir.style.display = "none";
+        btnBaila.style.display = "none";
+        btnPelea.style.display = "none";
+    }
+
+    
+    //Mostrar botones
+    
+    function mostrarBotones(){
+        btnComer.style.display = "inline";
+        btnDormir.style.display = "inline";
+        btnBaila.style.display = "inline";
+        btnPelea.style.display = "inline";
+    }
+
+    
+    //Timer
+
+   function temporizador(){
+       ocultarBotones();
+        setTimeout(function(){
+            neutral();
+            mostrarBotones();
+        }, 5000);    
+   }
+</script>
+</html>

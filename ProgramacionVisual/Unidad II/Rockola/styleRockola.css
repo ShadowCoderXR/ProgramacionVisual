@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+}
+
+div{
+    height: 735px; 
+    width: 50%;
+    float: left; 
+}
+
+.Titulos {
+    width: 25%;
+    background-color: aqua;
+}
+
+.Titulos button{
+    height: 10%;
+    width: 100%;
+    text-align: left;
+    display: block;
+}
+
+.info{
+    height: 710px;
+    width: 25%;
+    padding-top: 25px;
+    background-color: blue;
+}
+
+.info img{
+    height: 25%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.info p{
+    height: 70%;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.Multimedia { 
+    height: 650px;
+    background-color: red;
+}
+
+.Multimedia img{
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+}
+
+#controles{
+    height: 85px;
+    background-color: green;
+
+}
